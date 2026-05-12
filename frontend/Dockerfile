@@ -16,6 +16,10 @@ ARG NEXT_PUBLIC_WS_URL=ws://localhost:8000
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 ENV NEXT_PUBLIC_WS_URL=$NEXT_PUBLIC_WS_URL
 
+# Limit Node memory to stay within Render free tier (512MB RAM).
+# Disable Turbopack for production builds — it uses more memory.
+ENV NODE_OPTIONS="--max-old-space-size=400"
+
 RUN npm run build
 
 FROM node:20-alpine AS runner
