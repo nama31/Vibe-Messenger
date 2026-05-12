@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Required for Docker standalone output — generates server.js
-  output: "standalone",
+  // standalone output is only needed for Docker deployments.
+  // Render's native Node runtime uses `next start` directly.
+  // output: "standalone",
 };
 
 export default nextConfig;
