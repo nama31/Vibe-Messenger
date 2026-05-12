@@ -1,0 +1,102 @@
+.
+├── backend
+│   ├── alembic
+│   │   ├── env.py
+│   │   ├── README
+│   │   ├── script.py.mako
+│   │   └── versions
+│   ├── alembic.ini
+│   ├── app
+│   │   ├── api
+│   │   │   ├── __init__.py
+│   │   │   └── routers
+│   │   │       ├── auth.py
+│   │   │       ├── conversations.py
+│   │   │       ├── __init__.py
+│   │   │       ├── messages.py
+│   │   │       └── users.py
+│   │   ├── core
+│   │   │   ├── config.py
+│   │   │   ├── database.py
+│   │   │   ├── __init__.py
+│   │   │   ├── redis.py
+│   │   │   └── security.py
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   └── ws
+│   │       ├── __init__.py
+│   │       ├── manager.py
+│   │       └── router.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── backend-implementation-plan.md
+├── current_map.txt
+├── docker-compose.yml
+├── frontend
+│   ├── AGENTS.md
+│   ├── app
+│   │   ├── (auth)
+│   │   │   ├── login
+│   │   │   │   └── page.tsx
+│   │   │   └── register
+│   │   │       └── page.tsx
+│   │   ├── (chat)
+│   │   │   ├── conversations
+│   │   │   │   └── [id]
+│   │   │   │       └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── settings
+│   │       └── page.tsx
+│   ├── CLAUDE.md
+│   ├── Dockerfile
+│   ├── eslint.config.mjs
+│   ├── next.config.ts
+│   ├── next-env.d.ts
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.mjs
+│   ├── public
+│   │   ├── file.svg
+│   │   ├── globe.svg
+│   │   ├── next.svg
+│   │   ├── vercel.svg
+│   │   └── window.svg
+│   ├── README.md
+│   ├── src
+│   │   ├── components
+│   │   │   ├── chat
+│   │   │   │   ├── ChatWindow.tsx
+│   │   │   │   ├── MessageBubble.tsx
+│   │   │   │   ├── MessageInput.tsx
+│   │   │   │   ├── MessageList.tsx
+│   │   │   │   └── TypingIndicator.tsx
+│   │   │   ├── common
+│   │   │   │   ├── PresenceDot.tsx
+│   │   │   │   └── ThemeToggle.tsx
+│   │   │   └── sidebar
+│   │   │       ├── ConversationItem.tsx
+│   │   │       ├── ConversationList.tsx
+│   │   │       ├── NewConversationModal.tsx
+│   │   │       └── UserSearch.tsx
+│   │   ├── hooks
+│   │   │   ├── useChat.ts
+│   │   │   └── useQueries.ts
+│   │   ├── lib
+│   │   │   └── api.ts
+│   │   ├── store
+│   │   │   └── authStore.ts
+│   │   └── types
+│   │       └── index.ts
+│   └── tsconfig.json
+├── messenger-architecture.md
+├── package.json
+└── package-lock.json
+
+28 directories, 72 files
