@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useAuthStore } from "@/store/authStore";
+import { useAuthStore } from "../../store/authStore";
 import { useQueryClient } from "@tanstack/react-query";
-import { apiFetch } from "@/lib/api";
-import type { Message } from "@/types";
+import { apiFetch } from "../../lib/api";
+import type { Message } from "../../types";
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 

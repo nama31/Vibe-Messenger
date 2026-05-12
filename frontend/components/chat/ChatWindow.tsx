@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState, useCallback } from "react";
-import { useAuthStore } from "@/store/authStore";
-import { useMessages } from "@/hooks/useQueries";
-import { useChat } from "@/hooks/useChat";
-import { apiFetch } from "@/lib/api";
-import { PresenceDot } from "@/components/common/PresenceDot";
-import { Toast } from "@/components/common/Toast";
+import { useAuthStore } from "../../store/authStore";
+import { useMessages } from "../../hooks/useQueries";
+import { useChat } from "../../hooks/useChat";
+import { apiFetch } from "../../lib/api";
+import { PresenceDot } from "../common/PresenceDot";
+import { Toast } from "../common/Toast";
 import { MessageList } from "./MessageList";
 import { MessageInput } from "./MessageInput";
 import { TypingIndicator } from "./TypingIndicator";
-import type { Conversation } from "@/types";
+import type { Conversation } from "../../types";
 
 interface Props {
   conversationId: string;

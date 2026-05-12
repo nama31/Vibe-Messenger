@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { apiFetch } from "@/lib/api";
-import { useAuthStore } from "@/store/authStore";
-import type { User } from "@/types";
+import { apiFetch } from "../../../lib/api";
+import { useAuthStore } from "../../../store/authStore";
+import type { User } from "../../../types";
 
 interface AuthResponse {
   user: User;

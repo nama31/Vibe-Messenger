@@ -1,4 +1,4 @@
-import type { User } from "@/types";
+import type { User } from "../../types";
 
 interface Props {
   typingUsers: Record<string, boolean>;

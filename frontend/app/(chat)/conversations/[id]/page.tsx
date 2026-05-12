@@ -1,8 +1,8 @@
 "use client";
 
 import { use } from "react";
-import { ChatWindow } from "@/components/chat/ChatWindow";
-import { ErrorBoundary } from "@/components/common/ErrorBoundary";
+import { ChatWindow } from "../../../../components/chat/ChatWindow";
+import { ErrorBoundary } from "../../../../components/common/ErrorBoundary";
 
 interface Props {
   params: Promise<{ id: string }>;

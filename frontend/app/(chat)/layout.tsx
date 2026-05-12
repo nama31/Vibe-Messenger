@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { useAuthStore } from "@/store/authStore";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
-import { ConversationList } from "@/components/sidebar/ConversationList";
-import { UserSearch } from "@/components/sidebar/UserSearch";
-import { NewConversationModal } from "@/components/sidebar/NewConversationModal";
+import { useAuthStore } from "../../store/authStore";
+import { ThemeToggle } from "../../components/common/ThemeToggle";
+import { ConversationList } from "../../components/sidebar/ConversationList";
+import { UserSearch } from "../../components/sidebar/UserSearch";
+import { NewConversationModal } from "../../components/sidebar/NewConversationModal";
 
 export default function ChatLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();

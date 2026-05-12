@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { useAuthStore } from "@/store/authStore";
-import { apiFetch } from "@/lib/api";
-import type { User } from "@/types";
+import { useAuthStore } from "../../store/authStore";
+import { apiFetch } from "../../lib/api";
+import type { User } from "../../types";
 
 // ── Avatar preview ─────────────────────────────────────────────────────────
 

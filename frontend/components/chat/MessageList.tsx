@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { Message, User } from "@/types";
+import type { Message, User } from "../../types";
 import { MessageBubble } from "./MessageBubble";
 
 interface Props {

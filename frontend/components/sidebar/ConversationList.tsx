@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useConversations } from "@/hooks/useQueries";
-import { useAuthStore } from "@/store/authStore";
+import { useConversations } from "../../hooks/useQueries";
+import { useAuthStore } from "../../store/authStore";
 import { ConversationItem } from "./ConversationItem";
 
 // ── Skeleton row ───────────────────────────────────────────────────────────

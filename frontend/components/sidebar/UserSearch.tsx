@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { useUsers } from "@/hooks/useQueries";
-import { useAuthStore } from "@/store/authStore";
+import { useUsers } from "../../hooks/useQueries";
+import { useAuthStore } from "../../store/authStore";
 import { useQueryClient } from "@tanstack/react-query";
-import { apiFetch } from "@/lib/api";
-import { PresenceDot } from "@/components/common/PresenceDot";
-import type { Conversation, User } from "@/types";
+import { apiFetch } from "../../lib/api";
+import { PresenceDot } from "../common/PresenceDot";
+import type { Conversation, User } from "../../types";
 
 interface ConversationResponse extends Conversation {}
 

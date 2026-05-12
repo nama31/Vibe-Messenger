@@ -1,5 +1,5 @@
-import type { Conversation } from "@/types";
-import { PresenceDot } from "@/components/common/PresenceDot";
+import type { Conversation } from "../../types";
+import { PresenceDot } from "../common/PresenceDot";
 
 interface Props {
   conversation: Conversation;

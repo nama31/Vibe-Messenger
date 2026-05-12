@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
-import { useUsers } from "@/hooks/useQueries";
-import { useAuthStore } from "@/store/authStore";
-import { apiFetch } from "@/lib/api";
-import { PresenceDot } from "@/components/common/PresenceDot";
-import type { Conversation, User } from "@/types";
+import { useUsers } from "../../hooks/useQueries";
+import { useAuthStore } from "../../store/authStore";
+import { apiFetch } from "../../lib/api";
+import { PresenceDot } from "../common/PresenceDot";
+import type { Conversation, User } from "../../types";
 
 type Tab = "dm" | "group";
 
