@@ -62,3 +62,6 @@ redis_data/
 # Logs
 logs
 *.log
+
+#Hypothesis from kiro
+.hypothesis

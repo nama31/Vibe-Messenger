@@ -41,15 +41,29 @@ services:
     env_file:
       - .env
 
+  superuser:
+    build: ./backend
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+asyncpg://messenger:${DB_PASSWORD}@db:5432/messenger
+      JWT_SECRET: ${JWT_SECRET}
+      REDIS_URL: redis://redis:6379/0
+      SUPERUSER_USERNAME: ${SUPERUSER_USERNAME:-admin}
+      SUPERUSER_EMAIL: ${SUPERUSER_EMAIL:-admin@example.com}
+      SUPERUSER_PASSWORD: ${SUPERUSER_PASSWORD}
+      SUPERUSER_DISPLAY_NAME: ${SUPERUSER_DISPLAY_NAME:-Admin}
+    env_file:
+      - .env
+    command: python create_superuser.py
+
   frontend:
     build: ./frontend
     restart: unless-stopped
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-      - /app/.next
     depends_on:
       - backend
     environment:
