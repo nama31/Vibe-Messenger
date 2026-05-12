@@ -6,7 +6,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect, WebSocketExceptio
 from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
-from app.core.database import AsyncSessionLocal
+from app.core.database import get_session_factory
 from app.core.redis import get_redis
 from app.core.security import decode_token
 from app.models import (
@@ -128,7 +128,7 @@ async def websocket_endpoint(
     user_id = await _authenticate(token)
 
     # Use a fresh DB session for the lifetime of this connection
-    async with AsyncSessionLocal() as db:
+    async with get_session_factory()() as db:
         user = await _get_user(db, user_id)
         await _verify_participant(db, conversation_id, user_id)
 

@@ -51,8 +51,20 @@ async def run_async_migrations() -> None:
     and associate a connection with the context.
     """
     from app.core.config import settings
+
+    # Render (and most managed Postgres providers) give a URL with the
+    # plain `postgresql://` scheme. SQLAlchemy's async engine requires
+    # `postgresql+asyncpg://`. Normalise it here so alembic always uses
+    # the asyncpg driver regardless of what the env var contains.
+    db_url = settings.DATABASE_URL
+    if db_url.startswith("postgresql://"):
+        db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+    elif db_url.startswith("postgres://"):
+        # Heroku / some Render plans use the older `postgres://` alias
+        db_url = db_url.replace("postgres://", "postgresql+asyncpg://", 1)
+
     configuration = config.get_section(config.config_ini_section, {})
-    configuration["sqlalchemy.url"] = settings.DATABASE_URL
+    configuration["sqlalchemy.url"] = db_url
     
     connectable = async_engine_from_config(
         configuration,

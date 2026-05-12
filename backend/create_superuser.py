@@ -28,6 +28,12 @@ from sqlalchemy.orm import sessionmaker
 
 DATABASE_URL = os.environ["DATABASE_URL"]
 
+# Normalise postgresql:// → postgresql+asyncpg:// (Render gives the plain URL)
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://", 1)
+elif DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql+asyncpg://", 1)
+
 username = os.environ.get("SUPERUSER_USERNAME", "admin")
 email = os.environ.get("SUPERUSER_EMAIL", "admin@example.com")
 password = os.environ.get("SUPERUSER_PASSWORD", "")
