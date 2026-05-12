@@ -22,8 +22,11 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# Python lib dirs (venv artifacts) — scoped to avoid matching frontend/lib/
+backend/.venv/lib/
+backend/.venv/lib64/
+.venv/lib/
+.venv/lib64/
 parts/
 sdist/
 var/
