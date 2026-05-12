@@ -1,15 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // THIS IS THE MAGIC LINE FOR DOCKER:
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Required for Docker standalone output — generates server.js
   output: "standalone",
-  
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
-export default nextConfig; 
-// (If using .mjs or .js, use: export default nextConfig;)
+export default nextConfig;
